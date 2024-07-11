@@ -44,7 +44,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    getUsers(id:ID!): User
+    getUsers(id:ID!): User,
+    getAllUsers:[User]
   }
 
   input CreateUserInput {
