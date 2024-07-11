@@ -431,13 +431,12 @@ const port = 3001
 const url='mongodb+srv://bhargavpenugonda:snb1217@atlascluster.x5w376u.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster'
 app.use(express.json())
 app.use(cors())
-mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log('MongoDB connected')})
-.catch((err)=>{console.log(err)})
+mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{})
+.catch((err)=>{})
 
 //start my apollo  server
 const server = new ApolloServer({typeDefs,resolvers})
 app.use('/users',userApiFromRouter);
-<h1>hello world</h1>
 async function StartServer(){
     await server.start();
     server.applyMiddleware({app});
@@ -445,3 +444,4 @@ async function StartServer(){
         console.log(`Server live at ${port}`)})
 }
 StartServer();
+module.exports = app;

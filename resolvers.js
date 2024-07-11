@@ -13,6 +13,7 @@ const resolvers ={
         // getLimitedUsers: async(_,{limit,offset})=>{
         //     return await User.find().skip(offset).limit(limit);
         // }
+        getAllUsers:async()=>{return await User.find()}
     },
     Mutation: {
         createUser: async(_,{input})=>{
